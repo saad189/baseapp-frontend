@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ExpertiseRoutingModule } from './expertise-routing.module';
+import { ExpertiseComponent } from './expertise.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ExpertiseComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    ExpertiseRoutingModule
   ]
 })
 export class ExpertiseModule { }

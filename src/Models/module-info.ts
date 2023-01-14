@@ -17,3 +17,9 @@ export const MODULE_NAMES = {
     [MODULE_ADDRESS.ABOUT_US]: 'About Us',
     [MODULE_ADDRESS.SETTINGS]: 'Settings',
 }
+
+export interface ModuleInfo {
+    id: number;
+    name: string;
+    info: string;
+}

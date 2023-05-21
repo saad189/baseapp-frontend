@@ -5,6 +5,8 @@ import { MODULE_ADDRESS, MODULE_NAMES, ModuleInfo } from 'src/Models/module-info
 import { environment } from 'src/environments/environment';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { AppService } from 'src/Services/app-service/app.service';
+import { FormControl } from '@angular/forms';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-navigation',
@@ -22,7 +24,7 @@ export class NavigationComponent implements OnInit {
   moduleAddress = MODULE_ADDRESS;
   darkTheme = false;
   backgroundImage = '';
-
+  mode = new FormControl('over' as MatDrawerMode);
 
   isLoading = false;
 

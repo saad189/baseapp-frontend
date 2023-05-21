@@ -1,44 +1,66 @@
 <mat-sidenav-container [hasBackdrop]="" class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
-        <mat-nav-list>
-            <a mat-list-item routerLink="/" class="custom-logo">
-                <img class="p-4 w-100" src="assets/images/podcast-logo.png" alt="logo" />
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === true"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" class="custom-logo">
+        <img
+          class="p-4 w-100"
+          src="assets/images/podcast-logo.png"
+          alt="logo"
+        />
 
-                <a class="side-nav-logo"> {{ env.COMPANY_TITLE }}</a>
-            </a>
-            <a mat-list-item routerLink="/{{moduleAddress.PODCAST}}"> {{moduleNames[moduleAddress.PODCAST]}} </a>
-            <a mat-list-item href="{{ env.IDEAS_URL }}" target="_blank"> {{moduleNames[moduleAddress.IDEAS]}} </a>
-            <a mat-list-item routerLink="/{{moduleAddress.LIFE_SKILLS}}"> {{moduleNames[moduleAddress.LIFE_SKILLS]}}
-            </a>
-            <a mat-list-item routerLink="/{{moduleAddress.PROGRAMS}}"> {{moduleNames[moduleAddress.PROGRAMS]}} </a>
-            <a mat-list-item routerLink="/{{moduleAddress.RESEARCH}}"> {{moduleNames[moduleAddress.RESEARCH]}} </a>
-            <a mat-list-item href="{{ env.STORE_URL }}" target="_blank">{{moduleNames[moduleAddress.MERCH]}} </a>
-            <a mat-list-item routerLink="/{{moduleAddress.ABOUT_US}}"> {{moduleNames[moduleAddress.ABOUT_US]}} </a>
-        </mat-nav-list>
-    </mat-sidenav>
+        <a class="side-nav-logo"> {{ env.COMPANY_TITLE }}</a>
+      </a>
+      <a mat-list-item routerLink="/{{ moduleAddress.PORTFOLIO }}">
+        {{ moduleNames[moduleAddress.PORTFOLIO] }}
+      </a>
 
-    <!-- Start of Content -->
-    <mat-sidenav-content class="{{ darkTheme ? 'noImage' : 'backgroundImage' }} {{
-        darkTheme ? '' : backgroundImage
-      }}">
-        <app-header [currentModule]="currentModule"></app-header>
+      <a mat-list-item routerLink="/{{ moduleAddress.EXPERTISE }}">
+        {{ moduleNames[moduleAddress.EXPERTISE] }}
+      </a>
+      <a mat-list-item routerLink="/{{ moduleAddress.PRODUCTS }}">
+        {{ moduleNames[moduleAddress.PRODUCTS] }}
+      </a>
 
-        <mat-progress-bar mode="indeterminate" *ngIf="isLoading">
-        </mat-progress-bar>
+      <a mat-list-item routerLink="/{{ moduleAddress.ABOUT_US }}">
+        {{ moduleNames[moduleAddress.ABOUT_US] }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
 
-        <mat-toolbar color="primary" [ngClass]="isNavBarFixed ? 'mat-elevation-z8 fixed-nav' : ''"
-            class="no_scroll mat-custom-row" *ngIf="(isHandset$ | async) === false">
-            <div class="links-container">
-                <a mat-button routerLinkActive="focused" routerLink="/{{moduleAddress.PODCAST}}">
-                    {{moduleNames[moduleAddress.PODCAST]}}
-                </a>
-                <a mat-button [matMenuTriggerFor]="menu" aria-label="Button for Menu"
-                    [class.focused]="routes.ideas.value">
-                    {{moduleNames[moduleAddress.IDEAS]}}
-                </a>
+  <!-- Start of Content -->
+  <mat-sidenav-content
+    class="{{ darkTheme ? 'noImage' : 'backgroundImage' }} {{
+      darkTheme ? '' : backgroundImage
+    }}"
+  >
+    <app-header [currentModule]="currentModule"></app-header>
 
-                <mat-menu #menu="matMenu">
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading">
+    </mat-progress-bar>
+
+    <mat-toolbar
+      color="primary"
+      [ngClass]="isNavBarFixed ? 'mat-elevation-z8 fixed-nav' : ''"
+      class="no_scroll mat-custom-row"
+      *ngIf="(isHandset$ | async) === false"
+    >
+      <div class="links-container">
+        <a
+          mat-button
+          routerLinkActive="focused"
+          routerLink="/{{ moduleAddress.PORTFOLIO }}"
+        >
+          {{ moduleNames[moduleAddress.PORTFOLIO] }}
+        </a>
+
+        <!-- <mat-menu #menu="matMenu">
                     <a mat-menu-item href="{{ env.IDEAS_URL }}" target="_blank">
                         Ideas for Tomorrow
                         <span class="text-muted pl-2">
@@ -48,55 +70,51 @@
 
                     <a mat-menu-item routerLinkActive="focused" routerLink="/{{moduleAddress.IDEAS}}">Vision: PK
                         2050</a>
-                </mat-menu>
+                </mat-menu> -->
 
-                <a mat-button routerLinkActive="focused" routerLink="/{{moduleAddress.LIFE_SKILLS}}">
-                    {{moduleNames[moduleAddress.LIFE_SKILLS]}}
-                </a>
-                <mat-menu #menuProgram="matMenu">
-                    <a mat-menu-item routerLink="{{ moduleAddress.PROGRAMS }}/tools" routerLinkActive="focused">
-                        Tools
-                    </a>
+        <a
+          mat-button
+          routerLinkActive="focused"
+          routerLink="/{{ moduleAddress.EXPERTISE }}"
+        >
+          {{ moduleNames[moduleAddress.EXPERTISE] }}
+        </a>
 
-                    <a mat-menu-item routerLink="{{ moduleAddress.PROGRAMS }}/fun-activities"
-                        routerLinkActive="focused">Fun
-                        Activities</a>
-                    <a mat-menu-item routerLink="{{ moduleAddress.PROGRAMS }}/educational-activities"
-                        routerLinkActive="focused">
-                        Educational Activities</a>
-                </mat-menu>
-                <a mat-button routerLinkActive="focused" [matMenuTriggerFor]="menuProgram"
-                    [class.focused]="routes.programs.value">
-                    {{moduleNames[moduleAddress.PROGRAMS]}}
-                </a>
-                <a mat-button routerLinkActive="focused" routerLink="/{{moduleAddress.RESEARCH}}">
-                    {{moduleNames[moduleAddress.RESEARCH]}}
-                </a>
-                <a mat-button routerLinkActive="focused" href="{{ env.STORE_URL }}" target="_blank">
-                    {{moduleNames[moduleAddress.MERCH]}}
-                    <span class="pl-2">
-                        <i class="fa fa-external-link" aria-hidden="true"></i>
-                    </span>
-                </a>
-                <a mat-button routerLinkActive="focused" routerLink="/{{moduleAddress.ABOUT_US}}">
-                    {{moduleNames[moduleAddress.ABOUT_US]}}
-                </a>
-            </div>
-            <a mat-button class="pl-0" routerLink="/">
-                <img class="fixed-img" src="assets/images/podcast-logo.png" alt="logo" />
-                <span class="logo-text">{{ env.COMPANY_TITLE }}</span>
-            </a>
-        </mat-toolbar>
+        <a
+          mat-button
+          routerLinkActive="focused"
+          routerLink="/{{ moduleAddress.ABOUT_US }}"
+        >
+          {{ moduleNames[moduleAddress.ABOUT_US] }}
+        </a>
+      </div>
+      <a mat-button class="pl-0" routerLink="/">
+        <img
+          class="fixed-img"
+          src="assets/images/podcast-logo.png"
+          alt="logo"
+        />
+        <span class="logo-text">{{ env.COMPANY_TITLE }}</span>
+      </a>
+    </mat-toolbar>
 
-        <mat-toolbar *ngIf="(isHandset$ | async) === true">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-        </mat-toolbar>
+    <mat-toolbar *ngIf="(isHandset$ | async) === true">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
 
-        <div class="pt-6" *ngIf="isNavBarFixed && (isHandset$ | async) === false"></div>
-        <router-outlet></router-outlet>
+    <div
+      class="pt-6"
+      *ngIf="isNavBarFixed && (isHandset$ | async) === false"
+    ></div>
+    <router-outlet></router-outlet>
 
-        <app-footer></app-footer>
-    </mat-sidenav-content>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
 </mat-sidenav-container>

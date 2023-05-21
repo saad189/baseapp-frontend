@@ -17,9 +17,11 @@ export class NavigationComponent implements OnInit {
   minScrollLimit = 150;
   isNavBarFixed = false;
 
-  // currentModule: ModuleInfo;
+  currentModule: any; //ModuleInfo
   moduleNames = MODULE_NAMES;
   moduleAddress = MODULE_ADDRESS;
+  darkTheme = false;
+  backgroundImage = '';
 
 
   isLoading = false;

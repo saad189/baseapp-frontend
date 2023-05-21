@@ -1,8 +1,12 @@
 import { Component, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LayoutModule } from '@angular/cdk/layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,21 +22,45 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
+import { CookieService } from 'ngx-cookie-service';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const components: Component[] = [];
+
 const modules = [
-  MatToolbarModule,
-  ReactiveFormsModule,
-  MatTooltipModule,
-  MatProgressSpinnerModule,
+  MatDialogModule,
+  LayoutModule,
+  DragDropModule,
+  MatSlideToggleModule,
+  MatInputModule,
+  MatTableModule,
+  MatTabsModule,
   MatProgressBarModule,
-  MatExpansionModule,
-  MatCardModule,
+  MatToolbarModule,
   MatButtonModule,
+  MatSidenavModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatSidenavModule];
+  MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatTooltipModule,
+  MatCardModule,
+  MatGridListModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatSnackBarModule,
+  MatBadgeModule,
+  MatDatepickerModule,
+  MatSelectModule,
+  MatNativeDateModule,
+  MatSliderModule];
 const pipes: Component[] = [];
 const services = [];
 

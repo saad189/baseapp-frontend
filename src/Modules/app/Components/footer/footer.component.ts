@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MODULE_NAMES, MODULE_ADDRESS } from 'src/Models/module-info';
 import { AppService } from 'src/Services/app-service/app.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,6 +17,9 @@ export class FooterComponent implements OnInit {
   public email = `safnbusiness@gmail.com`;
   public phoneNumber = `+92 3001024411`
   darkTheme = false;
+  moduleNames = MODULE_NAMES;
+  moduleAddress = MODULE_ADDRESS;
+  env = environment;
 
   version = environment.VERSION;
   constructor(private appService: AppService) { }

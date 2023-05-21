@@ -63,9 +63,9 @@
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <!-- Content -->
               <span class="text-uppercase fw-bold mb-4">
-                Scientists and Engineers Co.
+                {{ env.COMPANY_TITLE }} Ltd.
               </span>
-              <p>Two Pseudo Intellectuals trying to make sense of this world</p>
+              <p>Value Driven Engineering</p>
             </div>
             <!-- Grid column -->
 
@@ -84,22 +84,35 @@
               <!-- Links -->
               <span class="text-uppercase fw-bold mb-4">Modules</span>
               <p>
-                <a routerLink="/podcast" class="text-reset">Podcast</a>
+                <a
+                  routerLink="/{{ moduleAddress.PORTFOLIO }}"
+                  class="text-reset"
+                >
+                  {{ moduleNames[moduleAddress.PORTFOLIO] }}</a
+                >
               </p>
               <p>
-                <a routerLink="/ideas" class="text-reset">Ideas Blog</a>
+                <a
+                  routerLink="/{{ moduleAddress.EXPERTISE }}"
+                  class="text-reset"
+                  >{{ moduleNames[moduleAddress.EXPERTISE] }}</a
+                >
               </p>
               <p>
-                <a routerLink="/life-skills" class="text-reset">Life Skills</a>
+                <a
+                  routerLink="/{{ moduleAddress.PRODUCTS }}"
+                  class="text-reset"
+                  >{{ moduleNames[moduleAddress.PRODUCTS] }}</a
+                >
               </p>
+
               <p>
-                <a routerLink="/programs" class="text-reset">Activities</a>
-              </p>
-              <p>
-                <a routerLink="/research" class="text-reset">Research</a>
-              </p>
-              <p>
-                <a routerLink="/about-us" class="text-reset">About Us</a>
+                <a
+                  routerLink="/{{ moduleAddress.ABOUT_US }}"
+                  class="text-reset"
+                >
+                  {{ moduleNames[moduleAddress.ABOUT_US] }}</a
+                >
               </p>
             </div>
             <!-- Grid column -->
@@ -127,7 +140,9 @@
       <!-- Copyright -->
       <div class="p-4" style="background-color: rgba(0, 0, 0, 0.05)">
         <!-- © 2021 Copyright: -->
-        <div class="text-center">Scientists and Engineers</div>
+        <div class="text-center">
+          Copyright © 2023 Scientists and Engineers. All Rights Reserved
+        </div>
 
         <div class="float-right small">Version : {{ version }}</div>
       </div>

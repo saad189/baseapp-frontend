@@ -28,6 +28,9 @@
         {{ moduleNames[moduleAddress.PRODUCTS] }}
       </a>
 
+      <a mat-list-item routerLink="/{{ moduleAddress.CONTACT }}">
+        {{ moduleNames[moduleAddress.CONTACT] }}
+      </a>
       <a mat-list-item routerLink="/{{ moduleAddress.ABOUT_US }}">
         {{ moduleNames[moduleAddress.ABOUT_US] }}
       </a>
@@ -71,12 +74,28 @@
         <a
           mat-button
           routerLinkActive="focused"
+          routerLink="/{{ moduleAddress.PRODUCTS }}"
+        >
+          {{ moduleNames[moduleAddress.PRODUCTS] }}
+        </a>
+
+        <a
+          mat-button
+          routerLinkActive="focused"
+          routerLink="/{{ moduleAddress.CONTACT }}"
+        >
+          {{ moduleNames[moduleAddress.CONTACT] }}
+        </a>
+
+        <a
+          mat-button
+          routerLinkActive="focused"
           routerLink="/{{ moduleAddress.ABOUT_US }}"
         >
           {{ moduleNames[moduleAddress.ABOUT_US] }}
         </a>
       </div>
-      <a mat-button class="pl-0" routerLink="/">
+      <a mat-button class="pl-0" routerLink="/" class="logo-image">
         <img
           class="fixed-img"
           src="assets/images/podcast-logo.png"

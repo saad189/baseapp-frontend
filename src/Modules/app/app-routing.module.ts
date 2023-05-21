@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: MODULE_ADDRESS.CONTACT, loadChildren: () => import('../contact/contact.module').then(m => m.ContactModule) },
   { path: MODULE_ADDRESS.PRODUCTS, loadChildren: () => import('../products/products.module').then(m => m.ProductsModule) },
   { path: MODULE_ADDRESS.EXPERTISE, loadChildren: () => import('../expertise/expertise.module').then(m => m.ExpertiseModule) },
-  { path: "**", component: NotfoundComponent },];
+  { path: "**", redirectTo: `/${MODULE_ADDRESS.HOME}` },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: "enabled" })],

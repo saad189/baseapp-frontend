@@ -12,7 +12,7 @@ export const MODULE_NAMES = {
     [MODULE_ADDRESS.HOME]: 'Home',
     [MODULE_ADDRESS.CONTACT]: 'Get In Touch',
     [MODULE_ADDRESS.PORTFOLIO]: 'Case Studies',
-    [MODULE_ADDRESS.EXPERTISE]: 'Expertise',
+    [MODULE_ADDRESS.EXPERTISE]: 'Services',
     [MODULE_ADDRESS.PRODUCTS]: 'Products',
     [MODULE_ADDRESS.ABOUT_US]: 'About Us',
     [MODULE_ADDRESS.SETTINGS]: 'Settings',

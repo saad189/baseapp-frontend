@@ -3,7 +3,7 @@ $header-height: 4rem;
 
 a,
 h1 {
-  color: black;
+  color: black !important;
   font-size: 1rem !important;
 }
 
@@ -75,7 +75,7 @@ img {
 
 .mat-custom-row {
   transition: 0.2s linear;
-  background: rgba(75, 72, 73);
+  background: rgba(75, 72, 73, 0.05);
   height: $header-height;
   z-index: 1000;
 }
@@ -107,13 +107,13 @@ img {
   overflow: hidden;
 }
 
-// .background-grey {
-//   a,
-//   h1 {
-//     color: black;
-//   }
-//   background-image: url("../../../../assets/images/HomePage/background-grey.jpg");
-// }
+.background-grey {
+  a,
+  h1 {
+    color: black;
+  }
+  background-image: url("../../../../assets/images/HomePage/background-grey.jpg");
+}
 
 // .background-blue {
 //   a,

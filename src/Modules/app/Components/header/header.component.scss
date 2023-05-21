@@ -1,0 +1,97 @@
+.custom-toolbar {
+  height: 2.6rem !important;
+  padding-top: 0.7rem;
+  padding-bottom: 0.4rem;
+  z-index: 10;
+}
+
+.pr-3 {
+  padding-right: 1rem;
+}
+
+.mat-slider-horizontal {
+  width: 275px;
+}
+
+.full-width {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+  .custom-toolbar {
+    height: 4rem !important;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    z-index: 10;
+  }
+
+  .grid-container-wierd {
+    display: grid;
+    grid-template-columns: auto auto;
+    .grid-item {
+      padding: 0.5rem;
+    }
+  }
+  .mat-slider-horizontal {
+    width: fit-content;
+  }
+}
+
+.custom-a {
+  font-size: 1rem;
+  display: flex;
+  justify-content: right;
+  a {
+    border-radius: 30px;
+    margin: 0.2em;
+    min-width: 0px;
+    width: 40px;
+    overflow: inherit;
+
+    mat-icon {
+      margin: 0.2rem;
+      overflow: visible;
+    }
+  }
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: fit-content;
+}
+
+::ng-deep.mat-menu-panel {
+  max-width: none !important;
+  overflow: visible;
+}
+
+.menu-size {
+  width: fit-content;
+
+  padding: 1rem;
+  white-space: pre-line;
+  height: fit-content;
+}
+
+span {
+  width: 10rem;
+  height: fit-content;
+  //white-space: pre-line;
+}
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -15%;
+}

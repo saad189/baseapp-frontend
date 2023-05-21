@@ -1,1 +1,139 @@
-<p>footer works!</p>
+<section id="footer">
+  <div class="display-custom min-vh-30">
+    <!-- Footer -->
+    <footer
+      class="text-center text-lg-start"
+      class="{{ darkTheme ? 'bg-dark text-light' : 'bg-light text-muted' }}"
+    >
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          Get connected with us on social networks:
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a
+            href="{{ facebookPage }}"
+            target="_blank"
+            class="{{ darkTheme ? 'text-light' : 'text-dark' }} m-1"
+            mat-button
+          >
+            <i class="fa fa-facebook-f"> </i>
+          </a>
+          <a
+            href="{{ twitterPage }}"
+            target="_blank"
+            class="{{ darkTheme ? 'text-light' : 'text-dark' }} m-1"
+            mat-button
+          >
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a
+            href="{{ instagramPage }}"
+            target="_blank"
+            class="{{ darkTheme ? 'text-light' : 'text-dark' }} m-1"
+            mat-button
+          >
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a
+            href="{{ youtubeChannel }}"
+            mat-button
+            target="_blank"
+            class="{{ darkTheme ? 'text-light' : 'text-dark' }} m-1"
+          >
+            <i class="fa fa-youtube"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <span class="text-uppercase fw-bold mb-4">
+                Scientists and Engineers Co.
+              </span>
+              <p>Two Pseudo Intellectuals trying to make sense of this world</p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <!-- <span class="text-uppercase fw-bold mb-4">Products</span>
+                <p>
+                  <a href="#!" class="text-reset">Angular</a>
+                </p> -->
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <span class="text-uppercase fw-bold mb-4">Modules</span>
+              <p>
+                <a routerLink="/podcast" class="text-reset">Podcast</a>
+              </p>
+              <p>
+                <a routerLink="/ideas" class="text-reset">Ideas Blog</a>
+              </p>
+              <p>
+                <a routerLink="/life-skills" class="text-reset">Life Skills</a>
+              </p>
+              <p>
+                <a routerLink="/programs" class="text-reset">Activities</a>
+              </p>
+              <p>
+                <a routerLink="/research" class="text-reset">Research</a>
+              </p>
+              <p>
+                <a routerLink="/about-us" class="text-reset">About Us</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <span class="text-uppercase fw-bold mb-4">Contact</span>
+              <p><i class="fa fa-home me-3"></i> Islamabad, Pakistan</p>
+              <p>
+                <i class="fa fa-envelope me-3"></i>
+                <a href="mailto:{{ email }}?subject = Feedback&body = Message">
+                  {{ email }}
+                </a>
+              </p>
+              <p><i class="fa fa-phone me-3"></i> {{ phoneNumber }}</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+        <!-- © 2021 Copyright: -->
+        <div class="text-center">Scientists and Engineers</div>
+
+        <div class="float-right small">Version : {{ version }}</div>
+      </div>
+
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+</section>

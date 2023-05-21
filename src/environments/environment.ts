@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  COMPANY_TITLE: 'StartForward',
+  COMPANY_TITLE: 'S&E LABS',
+  VERSION: 0.1
 };
 
 /*

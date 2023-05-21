@@ -23,7 +23,7 @@ export class NavigationComponent implements OnInit {
   moduleNames = MODULE_NAMES;
   moduleAddress = MODULE_ADDRESS;
   darkTheme = false;
-  backgroundImage = '';
+  backgroundImage = 'background-grey';
   mode = new FormControl('over' as MatDrawerMode);
 
   isLoading = false;

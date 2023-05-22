@@ -1,0 +1,29 @@
+.flexBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .item {
+    margin: 1rem;
+  }
+}
+
+.description-box {
+  background-color: lightgray;
+  width: 25rem;
+  padding: 1rem;
+}
+
+mat-form-field {
+  width: 20rem;
+}
+
+.form {
+  background-color: white;
+  padding: 1rem;
+}
+
+.closer {
+  background-color: purple;
+  padding: 1rem;
+}

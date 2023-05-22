@@ -18,6 +18,7 @@ export class NavigationComponent implements OnInit {
 
   minScrollLimit = 150;
   isNavBarFixed = false;
+  isBarHidden = true;
 
   currentModule: any; //ModuleInfo
   moduleNames = MODULE_NAMES;
@@ -42,6 +43,7 @@ export class NavigationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.manageNavigationSubscriptions();
   }
 
   manageNavigationSubscriptions() {
@@ -56,12 +58,15 @@ export class NavigationComponent implements OnInit {
 
         const paths = this.router.url.split("/").slice(1);
 
-        // this.currentModule = MODULE_INFORMATION.find((value) =>
-        //   paths.includes(value.name)
-        // );
 
+        this.currentModule = Object.values(this.moduleAddress).find((value) =>
+          paths.includes(value)
+        );
+
+        this.isBarHidden = this.currentModule === this.moduleAddress.CONTACT;
 
         this.isLoading = false;
+        console.log({ isBarHidden: this.isBarHidden, currentModule: this.currentModule, paths, modules: Object.values(this.moduleAddress) })
       }
 
       if (event instanceof NavigationError) {

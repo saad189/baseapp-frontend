@@ -8,7 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 import { NavigationComponent } from './Components/navigation/navigation.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
-import { NotfoundComponent } from './Components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { NotfoundComponent } from './Components/notfound/notfound.component';
     NavigationComponent,
     HeaderComponent,
     FooterComponent,
-    NotfoundComponent
+
   ],
   imports: [
     BrowserAnimationsModule,

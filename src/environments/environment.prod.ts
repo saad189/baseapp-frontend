@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  COMPANY_TITLE: 'S&E LABS',
+  VERSION: 0.1
 };

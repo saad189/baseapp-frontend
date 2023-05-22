@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9 form min-vh-100">
+      <form [formGroup]="contactForm">
+        <div class="flexBox">
+          <span class="display-1 item">{{ env.COMPANY_TITLE }}</span>
+
+          <span class="description-box item"
+            >Let's Talk. We'd love to understand what you're trying to build.
+            Please fill out the form below to get started.</span
+          >
+
+          <mat-form-field appearance="fill" class="item">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="item">
+            <mat-label>Offical Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                contactForm.get('email')?.touched
+              "
+              >Please enter a valid email</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="item">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="item">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phone" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="item">
+            <mat-label>What can we do for you?</mat-label>
+            <input matInput formControlName="description" />
+          </mat-form-field>
+
+          <span class="item"
+            >By signing up you are agreeing to our <a>privacy policy</a> and
+            providing consent to process this data for follow-up.</span
+          >
+
+          <button mat-stroked-button (click)="saveData()">Done</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3 closer min-vh-100"></div>
+  </div>
+</div>

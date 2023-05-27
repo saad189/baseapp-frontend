@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NavigationComponent } from './Components/navigation/navigation.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { MainComponent } from './Components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     NavigationComponent,
     HeaderComponent,
     FooterComponent,
+    MainComponent,
 
   ],
   imports: [
